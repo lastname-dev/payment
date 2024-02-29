@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:h2:~/test;NON_KEYWORDS=USER
+    url: jdbc:h2:~/test;
     driver-class-name: org.h2.Driver
     username: sa
   h2:
@@ -10,3 +10,8 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: update
+
+redis:
+  host: localhost
+  port: 6379
+  password: password
