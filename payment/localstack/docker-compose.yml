@@ -5,4 +5,4 @@ services:
     image: redis:7.2-rc3
     ports:
       - "6379:6379"
-    command: redis-server --requirepass password
+    command: redis-server
