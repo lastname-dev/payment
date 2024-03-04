@@ -8,12 +8,14 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
 @NoArgsConstructor
 @Getter
+@AllArgsConstructor
 public class Account {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,4 +26,8 @@ public class Account {
 	@ManyToOne
 	@JoinColumn(name = "memberId")
 	private Member member;
+
+	public void updateMoney(int amount){
+		this.amount = amount;
+	}
 }

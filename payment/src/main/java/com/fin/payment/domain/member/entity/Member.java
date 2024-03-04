@@ -11,6 +11,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -22,6 +23,11 @@ public class Member {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long memberId;
 
-	@OneToMany
-	private List<Account> account;
+
+	@OneToMany(mappedBy = "member")
+	private List<Account> accounts;
+
+	public Member (long memberId){
+		this.memberId = memberId;
+	}
 }
